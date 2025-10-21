@@ -1,0 +1,50 @@
+:root {
+  --bg: #0f172a;
+  --panel: #111827;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #2563eb;
+  --accent-2: #334155;
+  --good: #16a34a;
+  --shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+
+.app-header { padding: 24px; text-align: center; background: linear-gradient(90deg, #0b1221, #0f172a); border-bottom: 1px solid var(--accent-2); }
+.app-header h1 { margin: 0; font-weight: 700; }
+.subtitle { margin: 8px 0 0; color: var(--muted); font-size: 0.95rem; }
+
+.container { max-width: 1100px; margin: 24px auto; padding: 0 16px; }
+
+.controls {
+  display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+  background: var(--panel); border: 1px solid var(--accent-2); border-radius: 12px;
+  padding: 16px; box-shadow: var(--shadow);
+}
+.controls label { color: var(--muted); font-size: 0.9rem; }
+.controls select, .controls button {
+  border-radius: 10px; border: 1px solid var(--accent-2); background: #0b1221; color: var(--text);
+  padding: 10px 12px; outline: none;
+}
+.controls button { background: var(--accent); border-color: var(--accent); cursor: pointer; }
+.controls .secondary { background: transparent; border-color: var(--accent-2); }
+
+.layout { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin-top: 18px; }
+.panel { background: var(--panel); border: 1px solid var(--accent-2); border-radius: 12px; padding: 16px; box-shadow: var(--shadow); }
+.panel-title { margin: 0 0 10px; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+.card { background: #0b1221; border: 1px solid var(--accent-2); border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+.card .name { font-weight: 700; }
+.card .meta { color: var(--muted); font-size: 0.9rem; }
+.card .price { font-weight: 700; font-size: 1.1rem; }
+.card button { align-self: flex-start; }
+
+.tray { display: flex; flex-direction: column; gap: 10px; }
+.tray-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.tray-item { display: flex; justify-content: space-between; align-items: center; border: 1px solid var(--accent-2); border-radius: 10px; padding: 8px 10px; }
+.tray-item .left { display: flex; flex-direction: column; }
+.tray-item .amt { font-weight: 700; }
+.tray-total { display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed var(--accent-2); padding-top: 8px; margin-top: 8px; font-size: 1.1rem; }

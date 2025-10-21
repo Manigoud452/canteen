@@ -1,0 +1,60 @@
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <title>Simple Canteen — Core JS Exercise</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>Campus Canteen (Simple)</h1>
+    <p class="subtitle">No complex DOM API — just forms, onclick and core JS</p>
+  </header>
+
+  <main class="container">
+    <!-- Simple form controls -->
+    <section class="controls">
+      <label for="categorySelect">Category:</label>
+      <select id="categorySelect">
+        <option value="ALL">All</option>
+        <option value="Meals">Meals</option>
+        <option value="Snacks">Snacks</option>
+        <option value="Drinks">Drinks</option>
+      </select>
+
+      <label for="sortSelect">Sort:</label>
+      <select id="sortSelect">
+        <option value="NONE">None</option>
+        <option value="PRICE_ASC">Price ↑</option>
+        <option value="PRICE_DESC">Price ↓</option>
+      </select>
+
+      <!-- Using inline onclick (no addEventListener) -->
+      <button onclick="applyFilters()">Apply</button>
+      <button onclick="resetFilters()" class="secondary">Reset</button>
+    </section>
+
+    <section class="layout">
+      <div class="panel">
+        <h2 class="panel-title">Menu</h2>
+        <!-- We'll render the menu by writing a string into this container -->
+        <div id="menuGrid" class="grid"></div>
+      </div>
+
+      <div class="panel tray">
+        <h2 class="panel-title">Your Tray</h2>
+        <!-- Tray will be rendered into this list -->
+        <ul id="trayList" class="tray-list"></ul>
+
+        <div class="tray-total">
+          <span>Total:</span>
+          <strong id="trayTotal">₹0</strong>
+        </div>
+
+        <button onclick="clearTray()" class="secondary">Clear Tray</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Simple embedded data as a JS array -->
+  <script src="app.js" defer=""></script>
+</body></html>
